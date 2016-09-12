@@ -1,0 +1,20 @@
+#!/bin/bash
+# data file
+INPUT=/home/naveen/lol.txt
+INPUT1=/home/naveen/lol1.txt
+ 
+# while loop
+while IFS= read -r -n1 char
+do
+        # display one character at a time
+	echo  "$char"
+done < "$INPUT"
+
+echo "---- |||  Yo Naveen ! ||| ----"
+
+# while loop
+while IFS= read -r -n1 char
+do
+        # display one character at a time
+	echo  "$char"
+done < "$INPUT1"

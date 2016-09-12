@@ -1,0 +1,6 @@
+echo "Enter something:" 
+read
+echo "You entered $REPLY"
+echo "Enter something again:"
+read
+echo "You entered $REPLY"

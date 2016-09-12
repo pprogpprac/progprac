@@ -1,0 +1,57 @@
+			struct node *foo = nullptr;
+			struct node *temppar = nullptr;
+
+			foo = temp;
+			node *small = temp->gt;
+			while (small->lt != nullptr) // Iteration
+				small = small->lt;
+
+			node *big = temp->lt;
+			while (big->gt != nullptr) // Iteration
+				big = big->gt;
+
+
+			if (big->level > small->level)
+			{
+				temp = temp->lt;
+				while (temp->gt != nullptr) // Iteration
+					temp = temp->gt;
+			}
+			else
+			{
+				temp = temp->gt;
+				while (temp->lt != nullptr) // Iteration
+					temp = temp->lt;
+			}
+
+			if (temp->color == true)
+			{
+				// Now, replace the to-be-deleted node.
+				// First, make sure the to-be-replaced node's parent is no longer pointing to it.
+				temppar = temp->parent;
+
+				if (temppar->lt == temp)
+					temppar->lt = nullptr;
+				else if (temppar->gt == temp)
+					temppar->gt = nullptr;
+
+				// Second, replace foo. Note that other data remains the same, like the color of the node.
+				foo->id = temp->id;
+				temp->lt = foo->lt;
+				temp->gt = foo->gt;
+				temp->parent = foo->parent;
+
+
+				// Finally, delete foo.
+				temp->parent = nullptr;
+				temp->lt = nullptr;
+				temp->gt = nullptr;
+				delete(temp);
+				temp = nullptr;
+			}
+			else
+			{
+				// Call remove_node() again with the replacement candidate node.
+				remove_node(temp->id);
+			}
+			return;

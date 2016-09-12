@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- This file was created with the aha Ansi HTML Adapter. http://ziz.delphigl.com/tool_aha.php -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8" />
+<title>stdin</title>
+</head>
+<body>
+<pre>
+rm -rf prac
+
+////////////////// Step 1 of 3: make clean Completed ! ///////////////////
+#g++ -g -std=c++0x -pthread -o prac -fdump-tree-all -fdump-rtl-all prac.cpp
+#g++ -E prac.cpp &gt; prac_preprocessed_source_code.txt #Generate preprocessed source code
+#g++ -S prac.cpp #Generate assembly code
+#g++ -g -std=c++1y --save-temps -pthread -o prac prac.cpp
+g++ -g -std=c++11 --save-temps -pthread -o prac prac.cpp
+
+////////////////// Step 2 of 3: make Completed ! ///////////////////
+check_rules_assign_color(): RECOLORING required.We are trying to assign color for node: 3
+recoloring(): I was called ! 
+check_rules_assign_color(): RECOLORING required.We are trying to assign color for node: 60
+recoloring(): I was called ! 
+check_rules_assign_color(): RECOLORING required.We are trying to assign color for node: 1
+recoloring(): I was called ! 
+check_rules_assign_color(): RECOLORING required.We are trying to assign color for node: 25
+recoloring(): I was called ! 
+check_rules_assign_color(): RECOLORING required.We are trying to assign color for node: 30
+recoloring(): I was called ! 
+
+
+
+------------------------------------------------
+DISPLAY ENTIRE TREE AS A DETAILED LIST:
+------------------------------------------------
+<span style="color:dimgray;font-weight:bold;">Node: 10 	|| Level: 0 	|| Parent: -- 	|| L Child: 7 	|| G Child: 40.
+</span><span style="color:dimgray;font-weight:bold;">Node: 7 	|| Level: 1 	|| Parent: 10 	|| L Child: 3 	|| G Child: 8.
+</span><span style="color:dimgray;font-weight:bold;">Node: 3 	|| Level: 2 	|| Parent: 7 	|| L Child: 1 	|| G Child: 5.
+</span><span style="color:red;font-weight:bold;">Node: 1 	|| Level: 3 	|| Parent: 3 	|| L Child: -- 	|| G Child: --.
+</span><span style="color:red;font-weight:bold;">Node: 5 	|| Level: 3 	|| Parent: 3 	|| L Child: -- 	|| G Child: --.
+</span><span style="color:dimgray;font-weight:bold;">Node: 8 	|| Level: 2 	|| Parent: 7 	|| L Child: -- 	|| G Child: --.
+</span><span style="color:dimgray;font-weight:bold;">Node: 40 	|| Level: 1 	|| Parent: 10 	|| L Child: 30 	|| G Child: 45.
+</span><span style="color:red;font-weight:bold;">Node: 30 	|| Level: 2 	|| Parent: 40 	|| L Child: 20 	|| G Child: 35.
+</span><span style="color:dimgray;font-weight:bold;">Node: 20 	|| Level: 3 	|| Parent: 30 	|| L Child: -- 	|| G Child: 25.
+</span><span style="color:red;font-weight:bold;">Node: 25 	|| Level: 4 	|| Parent: 20 	|| L Child: -- 	|| G Child: --.
+</span><span style="color:dimgray;font-weight:bold;">Node: 35 	|| Level: 3 	|| Parent: 30 	|| L Child: -- 	|| G Child: --.
+</span><span style="color:dimgray;font-weight:bold;">Node: 45 	|| Level: 2 	|| Parent: 40 	|| L Child: -- 	|| G Child: 60.
+</span><span style="color:red;font-weight:bold;">Node: 60 	|| Level: 3 	|| Parent: 45 	|| L Child: -- 	|| G Child: --.
+</span>
+
+
+------------------------------------------------
+DISPLAY ENTIRE TREE AS A GRAPH/ACTUAL TREE:
+------------------------------------------------
+            <span style="color:red;font-weight:bold;">60
+ </span>
+         /
+        <span style="color:dimgray;font-weight:bold;">45
+ </span>
+     /
+    <span style="color:dimgray;font-weight:bold;">40
+ </span>     \
+            <span style="color:dimgray;font-weight:bold;">35
+ </span>
+         /
+        <span style="color:red;font-weight:bold;">30
+ </span>         \
+                <span style="color:red;font-weight:bold;">25
+ </span>
+             /
+            <span style="color:dimgray;font-weight:bold;">20
+ </span>
+
+
+ /
+ <span style="color:dimgray;font-weight:bold;">10
+ </span>  \
+        <span style="color:dimgray;font-weight:bold;">8
+ </span>
+     /
+    <span style="color:dimgray;font-weight:bold;">7
+ </span>     \
+            <span style="color:red;font-weight:bold;">5
+ </span>
+         /
+        <span style="color:dimgray;font-weight:bold;">3
+ </span>         \
+            <span style="color:red;font-weight:bold;">1
+ </span>
+
+
+
+remove_node(): Case 3: LYB.
+remove_node(): Black Deficient.
+black_deficient(): Case 1 of 9: Rb0 (case 1, py is black)
+black_deficient(): Case 3 of 9: Rb1 (case 1)
+black_deficient(): Case 4 of 9: Rb1 (case 2)
+black_deficient(): Case 5 of 9: Rb2
+black_deficient(): Case 6 of 9: Rr(0)
+black_deficient(): Case 7 of 9: Rr(1) (case 1)
+black_deficient(): Case 8 of 9: Rr(1) (case 2)
+black_deficient(): Case 9 of 9: Rr(2)
+
+||||||||||||||||||||
+DESTRUCTOR CALLED ! DELETED ENTIRE TREE !
+||||||||||||||||||||
+
+////////////////// Step 3 of 3: ./prac Completed ! ///////////////////
+</pre>
+</body>
+</html>

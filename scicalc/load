@@ -1,0 +1,7 @@
+echo "***** LOAD SCRIPT: Cleaning... *****"
+make clean
+echo "***** LOAD SCRIPT: Finished cleaning, now running Make... *****"
+make
+echo "***** LOAD SCRIPT: Finished Make, now executing... *****"
+./main
+echo "***** LOAD SCRIPT: Finished executing program ! *****"

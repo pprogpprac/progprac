@@ -1,0 +1,5 @@
+#bash load
+rm -rf nohup.out
+bash load | aha > output.html
+nohup xdg-open output.html
+

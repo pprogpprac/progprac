@@ -1,0 +1,9 @@
+rm -rf */*~
+cp -v --backup=numbered */URL.txt .
+echo "Done cp, now entering loop"
+count=0
+for d in URL.txt.* ; do
+    echo "$d"
+    mv $d URL$count.txt
+    (( count++ ))
+done

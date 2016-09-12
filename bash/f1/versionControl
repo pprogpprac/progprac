@@ -1,0 +1,9 @@
+count=0
+for d in URL* ; do
+    echo "$d"
+    echo $count
+    mv -v $d $count
+    (( count++ ))
+done
+
+

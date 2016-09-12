@@ -1,0 +1,10 @@
+make clean
+echo ""
+echo "////////////////// Step 1 of 3: make clean Completed ! ///////////////////"
+make
+echo ""
+echo "////////////////// Step 2 of 3: make Completed ! ///////////////////"
+./prac
+echo ""
+echo "////////////////// Step 3 of 3: ./prac Completed ! ///////////////////"
+

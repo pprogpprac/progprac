@@ -1,0 +1,6 @@
+make clean
+echo "////////////////// Step 1 of 3: make clean Completed ! ///////////////////"
+make
+echo "////////////////// Step 2 of 3: make Completed ! ///////////////////"
+./prac
+echo "////////////////// Step 3 of 3: ./prac Completed ! ///////////////////"

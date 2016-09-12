@@ -1,0 +1,68 @@
+void level_order(node *root)
+	{
+		const std::string reset("\033[0m");
+	    const std::string red("\033[1;31m");
+	    const std::string black("\033[1;30m");
+
+		std::cout << "\n------------------------------------------------>\n";
+		std::cout << "LEVEL |" << "-----TREE-------------------------------->\n";
+		std::cout << "------------------------------------------------>\n";
+		std::cout << "   0  |";
+
+		if(root == nullptr) return;
+
+		std::queue<node*> Q;
+		Q.push(root);
+
+		node *previous = nullptr;
+		node *current = nullptr;
+
+		bool has_sibling = false;
+
+		//while there is at least one discovered node
+		while(!Q.empty())
+		{
+			previous = current;
+			current = Q.front();
+			struct node *currpar = current->parent;
+			if(previous != nullptr)
+			{
+				if (current->level - previous->level > 0)
+				{
+					std::cout << reset << "\n\n";
+					std::cout << reset << "   " << current->level << "  |";
+					has_sibling = false;
+				}
+				else
+				{
+					if (current->parent == previous->parent)
+						has_sibling = true;
+					else
+						has_sibling = false;
+				}
+			}
+
+			Q.pop(); // removing the element at front
+
+			if (current->color == 1)
+			{
+				if (currpar != nullptr)
+					std::cout << red << "(" << current->id << "[" << currpar->id << "]"  << "),";
+				else
+					std::cout << red << "(" << current->id << "[no parent]" << "),"; // IMPOSSIBLE !
+			}
+			else
+			{
+				if (currpar != nullptr)
+					std::cout << black << "(" << current->id << "[" << currpar->id << "]" << "),";
+				else
+					std::cout << black << "(" << current->id << "[no parent]" << "),";
+			}
+
+			// Now, reset the shell color back to regular.
+			std::cout << reset;
+
+			if(current->lt != nullptr) Q.push(current->lt);
+			if(current->gt != nullptr) Q.push(current->gt);
+		}
+	}
